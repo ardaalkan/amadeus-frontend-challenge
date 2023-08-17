@@ -1,0 +1,4 @@
+.flightContainer{
+    display: flex;
+    flex-direction: row;
+}

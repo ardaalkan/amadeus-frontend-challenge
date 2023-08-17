@@ -1,0 +1,19 @@
+.main {
+  background-color: rgba(128, 128, 128, 0.2);
+  height: 55px;
+  width: 700px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.formStyle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.select{
+    width: 100px;
+}
