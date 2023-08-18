@@ -45,6 +45,11 @@ const Query = () => {
     fetchData();
   }, []);
 
+  const handleForm = (values) => {
+    localStorage.setItem("originAirport", values.up);
+    localStorage.setItem("destinationAirport", values.down);
+  };
+
   // const error = () => {
   //   Modal.error({
   //     title: "Hata",
@@ -54,7 +59,7 @@ const Query = () => {
 
   return (
     <div className={styles.main}>
-      <Form className={styles.formStyle}>
+      <Form className={styles.formStyle} onFinish={handleForm}>
         <Form.Item name="up" rules={[{ required: true, message: req }]}>
           <Select
             filterOption={false}
@@ -64,7 +69,6 @@ const Query = () => {
             suffixIcon={<img src={planeUp} alt="origin" />}
             notFoundContent={fetching ? <Spin size="small" /> : null}
             options={options}
-            onSearch={fetchData}
           />
         </Form.Item>
         <Form.Item name="down" rules={[{ required: true, message: req }]}>
