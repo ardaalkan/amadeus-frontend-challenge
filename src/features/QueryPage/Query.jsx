@@ -12,7 +12,7 @@ const Query = () => {
   const [fetching, setFetching] = useState(true);
   const [options, setOptions] = useState([]);
   const navigate = useNavigate();
-  const req = "This field is required";
+  const req = "Bu alan doldurulmalı!";
 
   const fetchData = async () => {
     try {

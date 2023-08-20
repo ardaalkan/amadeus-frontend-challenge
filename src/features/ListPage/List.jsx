@@ -4,15 +4,12 @@ import ListTable from "./ListTable/ListTable";
 import ReactPlaceholder from "react-placeholder";
 import Nullable from "../Nullable";
 import "react-placeholder/lib/reactPlaceholder.css";
+import Flight from "./FlightSchedule";
+import MainLayout from "../../layout/MainLayout";
 
 const List = () => {
-  const [filteredInfo, setFilteredInfo] = useState({});
-  const [sortedInfo, setSortedInfo] = useState({});
-  const [originAirport, setOriginAirport] = useState("");
-  const [destinationAirport, setDestinationAirport] = useState("");
   const [tableData, setTableData] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const exists = tableData.length;
 
   useEffect(() => {
@@ -45,21 +42,29 @@ const List = () => {
 
   return (
     <div className={styles.main}>
-      <ReactPlaceholder
-        showLoadingAnimation
-        type="text"
-        rows={9}
-        ready={!loading}
-        style={{ marginTop: "50px" }}
-      >
-        {loading ? (
-          <ReactPlaceholder style={{ width: "100%", height: "100%" }} />
-        ) : exists === 0 ? (
-          <Nullable /> //content here.
-        ) : (
-          <ListTable tableData={tableData} />
-        )}
-      </ReactPlaceholder>
+      <MainLayout>
+        <ReactPlaceholder
+          showLoadingAnimation
+          type="text"
+          rows={9}
+          ready={!loading}
+          style={{ marginTop: "50px" }}
+        >
+          {loading ? (
+            <ReactPlaceholder style={{ width: "100%", height: "100%" }} />
+          ) : exists === 0 ? (
+            <Nullable />
+          ) : (
+            <>
+              <Flight
+                origin={localStorage.getItem("originAirport")}
+                destination={localStorage.getItem("destinationAirport")}
+              />
+              <ListTable tableData={tableData} />
+            </>
+          )}
+        </ReactPlaceholder>
+      </MainLayout>
     </div>
   );
 };

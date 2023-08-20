@@ -1,12 +1,6 @@
 .mainLayout {
   padding: 15px;
-  background: radial-gradient(
-    circle,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(20, 37, 101, 1) 0%,
-    rgba(36, 41, 59, 1) 100%,
-    rgba(9, 9, 121, 1) 100%
-  );
+  background-color: white;
   height: 100%;
 }
 
@@ -19,5 +13,6 @@
   justify-content: space-between;
   align-items: center;
   font-size: 15px;
-  color: white;
+  color: rgb(0, 0, 0);
+  background-color: #6495ED
 }
