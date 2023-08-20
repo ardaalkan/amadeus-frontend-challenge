@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Main.module.css";
 import MainLayout from "../../layout/MainLayout";
-import Query from "../ListPage/Query/Query";
+import Query from "../QueryPage/Query";
 
 const Main = () => {
   return (
@@ -15,7 +15,7 @@ const Main = () => {
           </h2>
         </div>
       </div>
-      <Query/>
+      <Query />
     </MainLayout>
   );
 };

@@ -1,4 +1,6 @@
-.main{
-    color: rgb(0, 0, 0);
-    padding: 5px;
+.main {
+  padding: 15px;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(231,231,231,1) 97%);
+  height: 100%;
+  color: rgb(0, 0, 0);
 }

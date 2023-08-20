@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { Form, Button, Select, Spin } from "antd";
 import styles from "./Query.module.css";
-import { Form, Button, Modal, Select, Spin } from "antd";
-import planeDown from "../../../assets/images/svgs/planeDown.svg";
-import planeUp from "../../../assets/images/svgs/planeUp.svg";
+import planeDown from "../../assets/images/svgs/planeDown.svg";
+import planeUp from "../../assets/images/svgs/planeUp.svg";
+import Date from "./Date/Date";
 import { RightOutlined } from "@ant-design/icons";
-import Date from "./componets/Date/Date";
-import { first } from "lodash";
+import { useNavigate } from "react-router-dom";
+import { PATHS } from "../../constants";
 
 const Query = () => {
   const [fetching, setFetching] = useState(true);
-  const [submit, setSubmit] = useState(true);
   const [options, setOptions] = useState([]);
-  const [flightDestinations, setFlightDestinations] = useState([]);
-  const [targetAirportName, setTargetAirportName] = useState("");
-
+  const navigate = useNavigate();
   const req = "This field is required";
 
   const fetchData = async () => {
@@ -32,7 +30,6 @@ const Query = () => {
           value: firstFlight.destinationAirport.code,
         },
       ];
-
       setOptions(airportOptions);
       setFetching(false);
     } catch (error) {
@@ -48,14 +45,8 @@ const Query = () => {
   const handleForm = (values) => {
     localStorage.setItem("originAirport", values.up);
     localStorage.setItem("destinationAirport", values.down);
+    navigate(PATHS.LIST);
   };
-
-  // const error = () => {
-  //   Modal.error({
-  //     title: "Hata",
-  //     content: "Hava alanı Bulunamadı!",
-  //   });
-  // };
 
   return (
     <div className={styles.main}>
@@ -89,7 +80,6 @@ const Query = () => {
           type="primary"
           htmlType="submit"
           size="large"
-          disabled={!submit}
           style={{ margin: "5px" }}
         >
           <RightOutlined />

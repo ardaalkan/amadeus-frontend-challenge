@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path={PATHS.SEARCH} element={<Main />} />
-        <Route path={PATHS.SEARCH} element={<List />} />
+        <Route path={PATHS.LIST} element={<List />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
