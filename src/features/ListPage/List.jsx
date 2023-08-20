@@ -16,6 +16,7 @@ const List = () => {
     const origin = localStorage.getItem("originAirport");
     const destination = localStorage.getItem("destinationAirport");
 
+
     if (origin && destination) {
       fetchData(origin, destination);
     }
