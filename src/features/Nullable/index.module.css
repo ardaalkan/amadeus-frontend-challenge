@@ -1,0 +1,44 @@
+.main {
+  background-color: #ebebeb;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  width: 50%;
+  color: rgb(50, 50, 50);
+}
+
+h2 {
+  margin-left: 15px;
+  padding: 15px;
+}
+
+.buttonContaniner {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.button {
+  align-items: center;
+  background-color: red;
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 3%;
+  width: 170px;
+  height: 50px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(255, 67, 67);
+}
